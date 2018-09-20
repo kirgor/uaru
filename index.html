@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UARU</title>
+    <style>
+        h1 {
+            margin-left: 20px;
+        }
+
+        textarea {
+            resize: vertical;
+            width: 46%;
+            height: 600px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>UARU</h1>
+<textarea id="in" onchange="onInTextAreaChange()"></textarea>
+<textarea id="out"></textarea>
+
+<script>
+    const inTextArea = document.getElementById('in')
+    const outTextArea = document.getElementById('out')
+
+    inTextArea.focus()
+
+    function onInTextAreaChange() {
+        outTextArea.value = inTextArea.value
+            .replace(/и/g, 'ы')
+            .replace(/i/g, 'и')
+            .replace(/і/g, 'и')
+            .replace(/ї/g, 'йи')
+            .replace(/е/g, 'э')
+            .replace(/є/g, 'е')
+    }
+</script>
+</body>
+</html>
